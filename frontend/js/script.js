@@ -42,19 +42,18 @@ if (checkBtn) {
 
         try {
 
-            const response = await fetch("http://localhost:8080/api/check-email", {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-                    email: email
-                })
-
-            });
+            const response = await fetch(
+                "https://email-phishing-checker.onrender.com/api/check-email",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: email
+                    })
+                }
+            );
 
             if (!response.ok) {
                 throw new Error("Server Error : " + response.status);
@@ -88,15 +87,16 @@ if (checkBtn) {
             reasonList.innerHTML = "";
 
             data.reasons.forEach(function (reason) {
-let formattedReason = reason
-    .replace(/numbers/gi, "<span class='highlight-orange'>numbers</span>")
-    .replace(/special characters/gi, "<span class='highlight-red'>special characters</span>")
-    .replace(/personal name/gi, "<span class='highlight-blue'>personal name</span>")
-    .replace(/gmail\.com/gi, "<span class='highlight-domain'>gmail.com</span>")
-    .replace(/High Risk/gi, "<span class='highlight-high'>High Risk</span>")
-    .replace(/Medium Risk/gi, "<span class='highlight-medium'>Medium Risk</span>");
+                let formattedReason = reason
+                    .replace(/numbers/gi, "<span class='highlight-orange'>numbers</span>")
+                    .replace(/special characters/gi, "<span class='highlight-red'>special characters</span>")
+                    .replace(/personal name/gi, "<span class='highlight-blue'>personal name</span>")
+                    .replace(/gmail\.com/gi, "<span class='highlight-domain'>gmail.com</span>")
+                    .replace(/High Risk/gi, "<span class='highlight-high'>High Risk</span>")
+                    .replace(/Medium Risk/gi, "<span class='highlight-medium'>Medium Risk</span>");
 
-reasonList.innerHTML += `<li>${formattedReason}</li>`;            });
+                reasonList.innerHTML += `<li>${formattedReason}</li>`;
+            });
 
         }
 
@@ -137,7 +137,7 @@ if (analyzeBtn) {
 
         try {
 
-            const response = await fetch("http://localhost:8080/api/check-content", {
+            const response = await fetch("https://email-phishing-checker.onrender.com/api/check-content", {
 
                 method: "POST",
 
