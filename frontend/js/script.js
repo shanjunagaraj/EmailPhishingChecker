@@ -137,19 +137,18 @@ if (analyzeBtn) {
 
         try {
 
-            const response = await fetch("https://email-phishing-checker.onrender.com/api/check-content", {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-                    content: content
-                })
-
-            });
+            const response = await fetch(
+                "https://email-phishing-checker.onrender.com/api/check-content",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        content: content
+                    })
+                }
+            );
 
             if (!response.ok) {
                 throw new Error("Server Error : " + response.status);
