@@ -1,0 +1,6 @@
+﻿backend/target/
+backend/.idea/
+backend/.classpath
+backend/.project
+backend/.settings/
+.vscode/

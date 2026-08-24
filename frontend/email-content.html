@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Content Checker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card checker-card">
+
+            <h1>📝 Email Content Checker</h1>
+
+            <p class="subtitle">
+                Paste the email content below to detect phishing keywords and suspicious messages.
+            </p>
+
+            <div class="input-group">
+
+                <label for="emailContent">
+                    Email Content
+                </label>
+
+                <textarea
+                    id="emailContent"
+                    rows="8"
+                    placeholder="Paste the email content here..."></textarea>
+
+            </div>
+
+            <button id="analyzeBtn">
+                Analyze Content
+            </button>
+
+            <div class="result" id="contentResult">
+
+                <h2>Analysis Result</h2>
+
+                <p><strong>Status :</strong> <span id="contentStatus">Safe</span></p>
+
+                <p><strong>Risk Score :</strong> <span id="contentRisk">10%</span></p>
+
+                <div class="reason">
+
+                    <h3>Reasons</h3>
+
+                    <ul id="contentReasonList">
+                    </ul>
+
+                </div>
+
+                <!-- NEW: shows the pasted content back with suspicious
+                     phrases wrapped in <mark> tags by the backend, so the
+                     user can see exactly which words triggered the score. -->
+                <div class="reason">
+
+                    <h3>Highlighted Content</h3>
+
+                    <div id="highlightedContent" class="highlighted-box"></div>
+
+                </div>
+
+            </div>
+
+            <button class="back-btn" onclick="window.location.href='index.html'">
+                ← Back to Home
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

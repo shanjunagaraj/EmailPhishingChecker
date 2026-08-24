@@ -1,0 +1,305 @@
+/* Google Font */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html, body{
+    width:100%;
+    min-height:100vh;
+}
+
+body{
+    background:#D1EEEA;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    text-align:center;
+}
+
+h1{
+    color:#2A5674;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#2A5674;
+    font-size:18px;
+    margin-bottom:50px;
+}
+
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#FFFFFF;
+    width:340px;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.card h2{
+    color:#2A5674;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#555;
+    line-height:1.6;
+    margin:20px 0;
+
+    flex-grow:1;
+}
+
+button{
+    background:#68ABB8;
+    color:white;
+    border:none;
+    padding:12px 35px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+button:hover{
+    background:#2A5674;
+}
+
+/* ============================= */
+/* Email ID Checker Page */
+/* ============================= */
+
+.checker-card{
+    width:700px;
+    max-width:90%;
+    background:#FFFFFF;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    text-align:center;
+}
+
+.checker-card h1{
+    color:#2A5674;
+    margin-bottom:15px;
+}
+
+.checker-card .subtitle{
+    color:#555;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.input-group{
+    text-align:left;
+    margin-bottom:25px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:10px;
+    font-size:16px;
+    font-weight:600;
+    color:#2A5674;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+    border:2px solid #68ABB8;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border-color:#2A5674;
+    box-shadow:0 0 8px rgba(42,86,116,0.2);
+}
+
+#checkBtn{
+    width:100%;
+    padding:15px;
+    margin-bottom:30px;
+}
+
+#analyzeBtn{
+    width:100%;
+    padding:15px;
+    margin-bottom:30px;
+}
+
+/* ============================= */
+/* Result Section */
+/* ============================= */
+
+.result{
+    display:none;          /* Hidden initially */
+    background:#F8FAFC;
+    border-left:6px solid #68ABB8;
+    border-radius:12px;
+    padding:25px;
+    text-align:left;
+    margin-bottom:25px;
+}
+
+.result h2{
+    color:#2A5674;
+    margin-bottom:20px;
+}
+
+.result p{
+    margin:10px 0;
+}
+
+.reason h3{
+    margin-top:20px;
+    color:#2A5674;
+}
+
+.reason ul{
+    margin-top:10px;
+    padding-left:20px;
+}
+
+.reason li{
+    margin-bottom:8px;
+}
+
+/* ============================= */
+/* Risk level colors */
+/* Applied via JS: statusSpan.className = "safe" / "low-risk" / etc. */
+/* These replace the old .safe / .danger pair with one class per level. */
+/* ============================= */
+
+.safe{
+    color:#22C55E;
+    font-weight:bold;
+}
+
+.low-risk{
+    color:#84CC16;
+    font-weight:bold;
+}
+
+.suspicious{
+    color:#F59E0B;
+    font-weight:bold;
+}
+
+.high-risk{
+    color:#EF4444;
+    font-weight:bold;
+}
+
+.invalid-email,
+.invalid-content{
+    color:#94A3B8;
+    font-weight:bold;
+}
+
+.back-btn{
+    width:220px;
+    margin:auto;
+}
+
+textarea{
+    width:100%;
+    padding:15px;
+    border:2px solid #68ABB8;
+    border-radius:10px;
+    font-size:16px;
+    resize:vertical;
+    outline:none;
+    transition:.3s;
+}
+
+textarea:focus{
+    border-color:#2A5674;
+    box-shadow:0 0 8px rgba(42,86,116,0.2);
+}
+
+/* ============================= */
+/* Highlighted Content box */
+/* Shows the pasted email text back with suspicious phrases marked */
+/* ============================= */
+
+.highlighted-box{
+    background:#FFFFFF;
+    border:2px solid #68ABB8;
+    border-radius:10px;
+    padding:15px;
+    white-space:pre-wrap;   /* keeps line breaks from the original text */
+    word-wrap:break-word;
+    line-height:1.6;
+    color:#333;
+}
+
+.highlighted-box mark{
+    background:#FDE68A;
+    color:#92400E;
+    padding:1px 3px;
+    border-radius:4px;
+    font-weight:600;
+}
+.highlight-red{
+    color:#e53935;
+    font-weight:bold;
+}
+
+.highlight-orange{
+    color:#ff9800;
+    font-weight:bold;
+}
+
+.highlight-blue{
+    color:#1976d2;
+    font-weight:bold;
+}
+
+.highlight-domain{
+    color:#8e24aa;
+    font-weight:bold;
+}
+
+.highlight-high{
+    color:#d32f2f;
+    font-weight:bold;
+}
+
+.highlight-medium{
+    color:#fb8c00;
+    font-weight:bold;
+}
